@@ -1,0 +1,40 @@
+.star-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.star {
+    position: absolute;
+    font-size: 2rem;
+    color: #fff;
+    animation: rotateStar 5s infinite linear;
+}
+
+.star:nth-child(1) {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    top: 50%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.star:nth-child(3) {
+    top: 50%;
+    left: 90%;
+    animation-delay: 4s;
+}
+
+@keyframes rotateStar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
