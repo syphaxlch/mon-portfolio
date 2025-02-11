@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import '../../styles/globals.css';  // Assurez-vous que le chemin est correct
 
 export default function Home() {
     const [formData, setFormData] = useState({
