@@ -72,16 +72,16 @@ export default function Home() {
             </Head>
 
 
-
             <header className="text-center sm:text-left animate__animated animate__fadeIn animate__delay-1s mb-3">
                 <div className="p-16">
-                    <h1 className="text-5xl font-extrabold ">
+                    <h1 className="text-4xl sm:text-5xl font-extrabold">
                         Hi, I&#39;m <span className="text-yellow-500">Syphax</span>
                     </h1>
                     <br/>
                     <p className="text-l">Computer science student, I blend curiosity and efficiency to craft
                         solutions that are both innovative and practical.</p>
                 </div>
+
                 <div className="icons-slider-container w-full overflow-hidden relative">
                     <div className="icons-slider flex gap-8">
                         {[...Array(2)].map((_, idx) => (
