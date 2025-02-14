@@ -62,7 +62,7 @@ export default function Home() {
     };
 
     return (
-        <div className="gap-16 font-mono text-white bg-[#010e28]
+        <div className="gap-16 font-mono text-white w-screen bg-[#010e28]
         bg-[linear-gradient(to_bottom,_#082740_1px,_transparent_1px),_linear-gradient(to_right,_#082740_1px,_transparent_1px)] [background-size:30px_30px] bg-center animate-bgmove ">
             <Head>
                 {/* eslint-disable-next-line @next/next/no-page-custom-font */}
@@ -72,17 +72,14 @@ export default function Home() {
             </Head>
 
 
+            <header className="text-center sm:text-left animate__animated animate__fadeIn animate__delay-1s">
+                <h1 className="text-5xl font-extrabold mb-4">
+                    Hi, I&#39;m <span className="text-yellow-500">Syphax</span>
+                </h1>
+                <p className="text-xl mb-8">Computer science student, I blend curiosity and efficiency to craft
+                    solutions that are both innovative and practical.</p>
 
-            <header className="text-center sm:text-left animate__animated animate__fadeIn animate__delay-1s mb-3">
-                <div className="p-16">
-                    <h1 className="text-5xl font-extrabold ">
-                        Hi, I&#39;m <span className="text-yellow-500">Syphax</span>
-                    </h1>
-                    <br/>
-                    <p className="text-l">Computer science student, I blend curiosity and efficiency to craft
-                        solutions that are both innovative and practical.</p>
-                </div>
-                <div className="icons-slider-container w-full overflow-hidden relative">
+
                     <div className="icons-slider flex gap-8">
                         {[...Array(2)].map((_, idx) => (
                             <div key={idx} className="flex items-center gap-8 shrink-0">
@@ -103,61 +100,61 @@ export default function Home() {
                                 <Image src="/Azure_Cosmos_DB.svg" alt="Cosmos logo" width={80} height={80}/>
                             </div>
                         ))}
-                    </div>
                 </div>
             </header>
-            <section id="connect" className="bg-gray-800 text-white m-6 p-16 rounded-lg shadow-md">
+            <section id="connect" className="w-full bg-gray-800 text-white p-16 rounded-lg shadow-md">
                 <h2 className="text-4xl font-bold text-center mb-8">Connect with Me</h2>
-                <p className="text-center text-lg ">
+                <p className="text-center text-lg mb-8">
                     Feel free to reach out and connect with me on these platforms.
                 </p>
-                <div className="flex justify-center space-x-6 pt-5">
+                <div className="flex justify-center space-x-6">
                     <a
                         href="https://github.com/syphaxlch"
                         target="_blank"
-                        className="p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
-  bg-transparent sm:bg-gradient-to-r sm:from-gray-700 sm:to-gray-900 lg:bg-gradient-to-r lg:from-gray-700 lg:to-gray-900"
+                        className="bg-gradient-to-r from-gray-700 to-gray-900 p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl"
                     >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                             alt="GitHub"
                             className="w-8 h-8 rounded-lg transition-all duration-300"
                         />
-                        <span className="text-white font-semibold hidden sm:inline">GitHub</span>
+                        <span className="text-white font-semibold">GitHub</span>
                     </a>
 
                     <a
                         href="https://www.linkedin.com/in/syphaxlch"
                         target="_blank"
-                        className="p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
-  bg-transparent sm:bg-gradient-to-r sm:from-blue-500 sm:to-blue-700 lg:bg-gradient-to-r lg:from-blue-500 lg:to-blue-700"
+                        className="bg-gradient-to-r from-blue-500 to-blue-700 p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl"
                     >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
                             alt="LinkedIn"
                             className="w-8 h-8 rounded-lg transition-all duration-300"
                         />
-                        <span className="text-white font-semibold hidden sm:inline">LinkedIn</span>
+                        <span className="text-white font-semibold">LinkedIn</span>
                     </a>
+
                     <a
                         href="https://discord.com/users/904655608828010517"
                         target="_blank"
-                        className="p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
-                        bg-transparent sm:bg-gradient-to-r sm:from-purple-600 sm:to-indigo-700 lg:bg-gradient-to-r lg:from-purple-600 lg:to-indigo-700">
+                        className="bg-gradient-to-r from-purple-600 to-indigo-700 p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl"
+                    >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png"
                             alt="Discord"
                             className="w-8 h-8 rounded-lg transition-all duration-300"
                         />
-                        <span className="text-white font-semibold hidden sm:inline">Discord</span>
+                        <span className="text-white font-semibold">Discord</span>
                     </a>
-
                 </div>
             </section>
 
 
             <section id="projects-education"
-                     className="bg-gray-800 text-white p-16 rounded-lg shadow-md animate__animated animate__fadeIn animate__delay-2s">
+                     className="w-full bg-gray-800 text-white p-16 rounded-lg shadow-md animate__animated animate__fadeIn animate__delay-2s">
                 <div className="flex justify-center gap-8 mb-12">
                     <button
                         className={`text-lg font-semibold ${activeSection === 'projects' ? ' text-yellow-500 border-b-4 border-yellow-500' : 'text-white '}`}
@@ -297,7 +294,7 @@ export default function Home() {
             )}
 
 
-            <section id="realtime-activities" className="bg-gray-800 text-white p-16 rounded-lg shadow-md">
+            <section id="realtime-activities" className="w-full bg-gray-800 text-white p-16 rounded-lg shadow-md">
                 <h2 className="text-4xl font-bold text-center mb-8">What I&#39;m Doing in Real Time</h2>
                 <p className="text-center text-lg mb-8">Here’s what I’m currently working on and learning in real
                     time.</p>
@@ -380,7 +377,7 @@ export default function Home() {
             </section>
 
 
-            <section id="achievements" className="bg-gray-800 text-white p-16 rounded-lg shadow-md">
+            <section id="achievements" className="w-full bg-gray-800 text-white p-16 rounded-lg shadow-md">
                 <h2 className="text-4xl font-bold text-center mb-8">Achievements</h2>
                 <p className="text-center text-lg mb-8">Here are some of my certifications and achievements.</p>
                 <div className="space-y-8">
@@ -412,7 +409,7 @@ export default function Home() {
 
 
             <section id="contact"
-                     className="bg-gray-800 text-white p-16 rounded-lg shadow-md animate__animated animate__fadeIn animate__delay-2s">
+                     className="w-full bg-gray-800 text-white p-16 rounded-lg shadow-md animate__animated animate__fadeIn animate__delay-2s">
                 <h2 className="text-4xl font-bold text-center mb-8">Contact Me</h2>
                 <p className="text-center text-lg mb-12">Send me a message, I would be happy to answer your
                     questions.</p>
