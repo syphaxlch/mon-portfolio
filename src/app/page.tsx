@@ -212,7 +212,7 @@ export default function Home() {
                                     demo: "",
                                 }].map((project, index) => (
                                 <div key={index}
-                                     className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-8 transition-all duration-300 hover:scale-105">
+                                     className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-6 transition-all duration-300 hover:scale-105">
                                     <h3 className="text-2xl font-semibold text-white mb-4">{project.title}</h3>
                                     <p className="text-sm text-white mb-4">{project.description}</p>
                                     <div className="flex gap-4 mb-4">
