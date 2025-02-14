@@ -94,7 +94,7 @@ export default function Home() {
                                 <Image src="/oracle.png" alt="Oracle logo" width={48} height={48}/>
                                 <Image src="/sql.png" alt="SQL logo" width={48} height={48}/>
                                 <Image src="/react.png" alt="React logo" width={48} height={48}/>
-                                <Image src="/php.png" alt="Php logo" width={48} height={48}/>
+                                <Image src="/php.png" alt="PHP logo" width={48} height={48}/>
                                 <Image src="/vue.png" alt="Vue logo" width={48} height={48}/>
                                 <Image src="/tf.png" alt="TensorFlow logo" width={48} height={48}/>
                                 <Image src="/langchain.png" alt="LangChain logo" width={48} height={48}/>
