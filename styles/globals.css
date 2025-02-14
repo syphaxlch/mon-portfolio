@@ -1,0 +1,35 @@
+/* Animation de défilement horizontal */
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Commencer à la position initiale */
+    }
+    100% {
+        transform: translateX(-100%); /* Déplacer hors de l'écran */
+    }
+}
+
+/* Conteneur de l'animation */
+.overflow-hidden {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* Première série d'icônes, animation immédiate */
+.animate-scroll-first {
+    display: flex;
+    animation: scroll 20s linear infinite; /* Animation continue, 20s de durée */
+}
+
+/* Deuxième série d'icônes, animation après un délai de 3 secondes */
+.animate-scroll-second {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    animation-delay: 3s; /* Délai de 3 secondes avant de commencer */
+}
+
+/* Chaque icône avec un espacement */
+.animate-scroll-first img,
+.animate-scroll-second img {
+    margin: 0 10px;
+}

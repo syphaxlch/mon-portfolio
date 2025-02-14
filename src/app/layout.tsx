@@ -20,7 +20,7 @@ export default function RootLayout({
         <html lang="fr">
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>Mon Portfolio</title>
+            <title>Syphax's Personal Website</title>
         </head>
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}

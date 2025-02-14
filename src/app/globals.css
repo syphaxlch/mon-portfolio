@@ -19,3 +19,81 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+@keyframes scrollIcons {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.icons-slider-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.icons-slider {
+  display: flex;
+  white-space: nowrap;
+  animation: scrollIcons 12s linear infinite;
+}
+.icons-slider img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 8px; /* Arrondi des coins */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+
+/* Effet au survol */
+.icons-slider img:hover {
+  transform: scale(1.2); /* Zoom */
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Brillance */
+}
+
+/* Style général des boutons */
+#projects-education button {
+  font-size: 1.5rem; /* Taille plus grande */
+  padding: 12px 20px; /* Plus d'espace autour du texte */
+  border-radius: 8px; /* Coins arrondis */
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease; /* Transition fluide */
+}
+
+/* Effet au survol */
+#projects-education button:hover {
+  transform: scale(1.1); /* Agrandir au survol */
+  background-color: rgba(255, 255, 255, 0.1); /* Fond léger */
+  border-color: #f59e0b; /* Bordure dorée au survol */
+  color: #f59e0b; /* Changer la couleur du texte au survol */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre au survol */
+}
+
+/* Quand la section est active (projets ou éducation) */
+#projects-education button.text-yellow-500 {
+  color: #f59e0b; /* Couleur jaune doré pour la section active */
+  border-color: #f59e0b; /* Bordure dorée */
+  background-color: rgba(245, 158, 11, 0.1); /* Fond léger doré */
+}
+
+.icons-slider img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 8px; /* Arrondi des coins */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+
+/* Effet au survol des icônes */
+.icons-slider img:hover {
+  transform: scale(1.2); /* Zoom */
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Brillance */
+}
+
+/* C'est exactement ce que tu souhaites pour les icônes ! */
+.group:hover img {
+  transform: scale(1.25); /* Zoom au survol */
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Brillance au survol */
+}
+
