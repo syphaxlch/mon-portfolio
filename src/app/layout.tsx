@@ -21,7 +21,7 @@ export default function RootLayout({
         <html lang="fr">
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>Syphax&#39;s Personal Website</title>
+            <title>Syphax&apos;s Personal Website</title> {/* Correction de l'apostrophe */}
         </head>
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
