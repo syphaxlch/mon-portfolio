@@ -95,9 +95,9 @@ export default function Home() {
                                 <Image src="/Vue.png" alt="Vue logo" width={48} height={48}/>
                                 <Image src="/tf.png" alt="TensorFlow logo" width={48} height={48}/>
                                 <Image src="/langchain.png" alt="LangChain logo" width={48} height={48}/>
-                                <Image src="/r.png" alt="R logo" width={48} height={48}/>
+                                <Image src="/R.png" alt="R logo" width={48} height={48}/>
                                 <Image src="/flask.png" alt="Flask logo" width={48} height={48}/>
-                                <Image src="/Azure_cosmos_DB.svg" alt="Cosmos logo" width={80} height={80}/>
+                                <Image src="/Azure_Cosmos_DB.svg" alt="Cosmos logo" width={80} height={80}/>
                             </div>
                         ))}
                     </div>
