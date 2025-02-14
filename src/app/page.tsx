@@ -200,14 +200,14 @@ export default function Home() {
                                 {
                                     title: "Extension for Email Filtering (with LLM)",
                                     description: "A Chrome extension using LangChain and Flask for classifying emails.",
-                                    techs: ["/flask.svg", "/llama3.png", "/langchain.png"],
+                                    techs: ["/Flask.svg", "/Llama3.png", "/langchain.png"],
                                     link: "https://github.com/syphaxlch/Email_Analysis_with_LLM",
                                     demo: "/llm-demo.mp4", // Lien vers la vidéo locale
                                 },
                                 {
                                     title: "Azure DevOps - VM Scale Set",
                                     description: "Automating the deployment of a VM Scale Set on Azure.",
-                                    techs: ["/azure.png", "/devops.svg"],
+                                    techs: ["/azure.png", "/DevOps.svg"],
                                     link: "https://github.com/syphaxlch/8CLD201_Devoir1",
                                     demo: "",
                                 }].map((project, index) => (
@@ -222,7 +222,7 @@ export default function Home() {
                                     </div>
                                     <a href={project.link}
                                        className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
-                                        View Project
+                                        Code
                                     </a>
                                     <a
                                         href={project.demo ? project.demo : '#'}
