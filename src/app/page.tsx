@@ -92,8 +92,8 @@ export default function Home() {
                                 <Image src="/firebase.png" alt="Firebase logo" width={48} height={48}/>
                                 <Image src="/azure.png" alt="Azure logo" width={48} height={48}/>
                                 <Image src="/oracle.png" alt="Oracle logo" width={48} height={48}/>
-                                <Image src="/SQL.png" alt="SQL logo" width={48} height={48}/>
-                                <Image src="/React.png" alt="React logo" width={48} height={48}/>
+                                <Image src="/sql.png" alt="SQL logo" width={48} height={48}/>
+                                <Image src="/react.png" alt="React logo" width={48} height={48}/>
                                 <Image src="/Php.png" alt="Php logo" width={48} height={48}/>
                                 <Image src="/Vue.png" alt="Vue logo" width={48} height={48}/>
                                 <Image src="/tf.png" alt="TensorFlow logo" width={48} height={48}/>
