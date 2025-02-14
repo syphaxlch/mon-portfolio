@@ -45,6 +45,7 @@ export default function Home() {
             } else {
                 setIsError(true);
             }
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
             setIsError(true);
         }
@@ -65,14 +66,15 @@ export default function Home() {
         w-screen bg-[#010e28] bg-[linear-gradient(to_bottom,_#082740_1px,_transparent_1px),_linear-gradient(to_right,_#082740_1px,_transparent_1px)] [background-size:30px_30px] bg-center animate-bgmove
         ">
             <Head>
+                {/* eslint-disable-next-line @next/next/no-page-custom-font */}
                 <link rel="stylesheet"
                       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap"/>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
             </Head>
 
             <header className="text-center sm:text-left animate__animated animate__fadeIn animate__delay-1s">
                 <h1 className="text-5xl font-extrabold mb-4">
-                    Hi, I'm <span className="text-yellow-500">Syphax</span>
+                    Hi, I&#39;m <span className="text-yellow-500">Syphax</span>
                 </h1>
                 <p className="text-xl mb-8">Computer science student, I blend curiosity and efficiency to craft
                     solutions that are both innovative and practical.</p>
@@ -112,6 +114,7 @@ export default function Home() {
                         target="_blank"
                         className="bg-gradient-to-r from-gray-700 to-gray-900 p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl"
                     >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                             alt="GitHub"
@@ -125,6 +128,7 @@ export default function Home() {
                         target="_blank"
                         className="bg-gradient-to-r from-blue-500 to-blue-700 p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl"
                     >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
                             alt="LinkedIn"
@@ -138,6 +142,7 @@ export default function Home() {
                         target="_blank"
                         className="bg-gradient-to-r from-purple-600 to-indigo-700 p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl"
                     >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png"
                             alt="Discord"
@@ -208,7 +213,7 @@ export default function Home() {
                                         ))}
                                     </div>
                                     <a href={project.link}
-                                       className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white hover:text-purple-600 transition duration-300">
+                                       className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
                                         View Project
                                     </a>
                                     <a
@@ -234,7 +239,7 @@ export default function Home() {
                         <p className="text-center text-lg mb-12">Here is an overview of my academic background.</p>
                         <div className="space-y-8">
                             <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg p-8">
-                                <h3 className="text-2xl font-semibold text-white mb-4">Bachelor's in Computer
+                                <h3 className="text-2xl font-semibold text-white mb-4">Bachelor&#39;s in Computer
                                     Science</h3>
                                 <p className="text-sm text-white mb-2">Université du Québec à Chicoutimi (UQAC),
                                     Chicoutimi, QC
@@ -243,7 +248,7 @@ export default function Home() {
                             </div>
 
                             <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg p-8">
-                                <h3 className="text-2xl font-semibold text-white mb-4">Master's in Systems
+                                <h3 className="text-2xl font-semibold text-white mb-4">Master&#39;s in Systems
                                     Engineering</h3>
                                 <p className="text-sm text-white mb-2">Mouloud Mammeri University of Tizi-Ouzou
                                     (UMMTO), Tizi-Ouzou, Algeria</p>
@@ -251,7 +256,7 @@ export default function Home() {
                             </div>
 
                             <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg p-8">
-                                <h3 className="text-2xl font-semibold text-white mb-4">Bachelor's in Computer
+                                <h3 className="text-2xl font-semibold text-white mb-4">Bachelor&#39;s in Computer
                                     Systems</h3>
                                 <p className="text-sm text-white mb-2">
                                     Mouloud Mammeri University of Tizi-Ouzou
@@ -291,7 +296,7 @@ export default function Home() {
 
 
             <section id="realtime-activities" className="w-full bg-gray-800 text-white p-16 rounded-lg shadow-md">
-                <h2 className="text-4xl font-bold text-center mb-8">What I'm Doing in Real Time</h2>
+                <h2 className="text-4xl font-bold text-center mb-8">What I&#39;m Doing in Real Time</h2>
                 <p className="text-center text-lg mb-8">Here’s what I’m currently working on and learning in real
                     time.</p>
                 <div className="space-y-8">
@@ -303,7 +308,7 @@ export default function Home() {
                             supervised and unsupervised learning algorithms, applied to real-world predictive analytics
                             problems. I’m gaining hands-on experience with tools like Scikit-Learn and Python.</p>
                         <a href="https://programmes.uqac.ca/8iar403" target="_blank"
-                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white hover:text-purple-600 transition duration-300">
+                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
                             View the course
                         </a>
                     </div>
@@ -314,7 +319,7 @@ export default function Home() {
                             focusing on cloud infrastructure, containerization (Kubernetes, Docker), CI/CD pipelines,
                             and advanced topics such as cloud storage, security, and machine learning in the cloud.</p>
                         <a href="https://programmes.uqac.ca/8CLD202" target="_blank"
-                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white hover:text-purple-600 transition duration-300">
+                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
                             View the course
                         </a>
                     </div>
@@ -326,7 +331,7 @@ export default function Home() {
                             dashboards, analyze needs, and ensure security and governance of the tools after
                             deployment.</p>
                         <a href="https://programmes.uqac.ca/8INF416" target="_blank"
-                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white hover:text-purple-600 transition duration-300">
+                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
                             View the course
                         </a>
                     </div>
@@ -338,7 +343,7 @@ export default function Home() {
                             secure coding (OWASP), vulnerability scanning, incident response, and cryptography, with
                             practical applications in security intelligence and risk management.</p>
                         <a href="https://programmes.uqac.ca/8SEC201" target="_blank"
-                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white hover:text-purple-600 transition duration-300">
+                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
                             View the course
                         </a>
                     </div>
@@ -346,13 +351,13 @@ export default function Home() {
                     <div className="bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg p-8">
                         <h3 className="text-2xl font-semibold mb-4">Deep Learning with Keras and TensorFlow - 3rd
                             Edition</h3>
-                        <p className="text-sm text-white mb-4">I’m reading the book "Deep Learning with Keras and
-                            TensorFlow - 3rd Edition," which covers practical applications of deep learning using the
+                        <p className="text-sm text-white mb-4">I’m reading the book &#34;Deep Learning with Keras and
+                            TensorFlow - 3rd Edition,&#34; which covers practical applications of deep learning using the
                             Keras and TensorFlow libraries. The book includes real-world case studies and examples,
                             allowing hands-on learning in the field of deep learning.</p>
                         <a href="https://www.amazon.com/Deep-Learning-Keras-TensorFlow-Edition/dp/1800569023"
                            target="_blank"
-                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white hover:text-purple-600 transition duration-300">
+                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
                             View the book
                         </a>
                     </div>
@@ -365,7 +370,7 @@ export default function Home() {
                             and performant applications.</p>
                         <a href="https://learn.microsoft.com/fr-ca/training/modules/dotnet-microservices/"
                            target="_blank"
-                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white hover:text-purple-600 transition duration-300">
+                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
                             View the course
                         </a>
                     </div>
@@ -395,7 +400,7 @@ export default function Home() {
                             .NET, covering modern cloud-based application architectures.</p>
                         <a href="https://learn.microsoft.com/api/achievements/share/en-us/SyphaxLakhdarchaouche-6739/ZKW6EBM2?sharingId=FC41748111551AD2"
                            target="_blank"
-                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white hover:text-purple-600 transition duration-300">
+                           className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
                             View Certification
                         </a>
                     </div>
