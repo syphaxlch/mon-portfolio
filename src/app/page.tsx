@@ -107,21 +107,23 @@ export default function Home() {
                 </div>
             </header>
             <section id="connect" className="bg-gray-800 text-white m-6 p-16 rounded-lg shadow-md">
-                <h2 className="text-4xl font-bold text-center mb-8">Connect with Me</h2>
-                <p className="text-center text-lg ">
+                <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-8">
+                    Connect with Me
+                </h2>
+                <p className="text-base sm:text-lg text-center mb-8">
                     Feel free to reach out and connect with me on these platforms.
                 </p>
-                <div className="flex justify-center space-x-6 pt-5">
+                <div className="flex justify-center space-x-4 sm:space-x-6 pt-5">
                     <a
                         href="https://github.com/syphaxlch"
                         target="_blank"
-                        className="p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
+                        className="p-3 sm:p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
   bg-transparent sm:bg-gradient-to-r sm:from-gray-700 sm:to-gray-900 lg:bg-gradient-to-r lg:from-gray-700 lg:to-gray-900"
                     >
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                             alt="GitHub"
-                            className="w-8 h-8 rounded-lg transition-all duration-300"
+                            className=" rounded-lg transition-all duration-300"
                         />
                         <span className="text-white font-semibold hidden sm:inline">GitHub</span>
                     </a>
@@ -129,25 +131,29 @@ export default function Home() {
                     <a
                         href="https://www.linkedin.com/in/syphaxlch"
                         target="_blank"
-                        className="p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
-  bg-transparent sm:bg-gradient-to-r sm:from-blue-500 sm:to-blue-700 lg:bg-gradient-to-r lg:from-blue-500 lg:to-blue-700"
+                        className="p-3 sm:p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
+                              bg-transparent sm:bg-gradient-to-r sm:from-blue-500 sm:to-blue-700 lg:bg-gradient-to-r lg:from-blue-500 lg:to-blue-700"
                     >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
                             alt="LinkedIn"
-                            className="w-8 h-8 rounded-lg transition-all duration-300"
+                            className="rounded-lg transition-all duration-300"
                         />
                         <span className="text-white font-semibold hidden sm:inline">LinkedIn</span>
                     </a>
+
                     <a
                         href="https://discord.com/users/904655608828010517"
                         target="_blank"
-                        className="p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
-                        bg-transparent sm:bg-gradient-to-r sm:from-purple-600 sm:to-indigo-700 lg:bg-gradient-to-r lg:from-purple-600 lg:to-indigo-700">
+                        className="p-3 sm:p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
+                        bg-transparent sm:bg-gradient-to-r sm:from-purple-600 sm:to-indigo-700 lg:bg-gradient-to-r lg:from-purple-600 lg:to-indigo-700"
+                    >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png"
                             alt="Discord"
-                            className="w-8 h-8 rounded-lg transition-all duration-300"
+                            className="rounded-lg transition-all duration-300"
                         />
                         <span className="text-white font-semibold hidden sm:inline">Discord</span>
                     </a>
@@ -298,14 +304,14 @@ export default function Home() {
 
 
             <section id="realtime-activities" className="bg-gray-800 text-white p-16 rounded-lg shadow-md">
-                <h2 className="text-4xl font-bold text-center mb-8">What I&#39;m Doing in Real Time</h2>
+                <h2 className="font-bold text-center mb-8">What I&#39;m Doing in Real Time</h2>
                 <p className="text-center text-lg mb-8">Here’s what I’m currently working on and learning in real
                     time.</p>
                 <div className="space-y-8">
 
 
                     <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg p-8">
-                        <h3 className="text-2xl font-semibold mb-4">Machine Learning for Data Science (UQAC)</h3>
+                        <h3 className="font-semibold mb-4">Machine Learning for Data Science (UQAC)</h3>
                         <p className="text-sm text-white mb-4">I’m currently enrolled in a course that covers both
                             supervised and unsupervised learning algorithms, applied to real-world predictive analytics
                             problems. I’m gaining hands-on experience with tools like Scikit-Learn and Python.</p>
@@ -316,7 +322,7 @@ export default function Home() {
                     </div>
 
                     <div className="bg-gradient-to-r from-green-600 to-teal-600 rounded-lg p-8">
-                        <h3 className="text-2xl font-semibold mb-4">Cloud Computing (UQAC)</h3>
+                        <h3 className="font-semibold mb-4">Cloud Computing (UQAC)</h3>
                         <p className="text-sm text-white mb-4">I’m currently taking a course in cloud computing,
                             focusing on cloud infrastructure, containerization (Kubernetes, Docker), CI/CD pipelines,
                             and advanced topics such as cloud storage, security, and machine learning in the cloud.</p>
@@ -327,7 +333,7 @@ export default function Home() {
                     </div>
 
                     <div className="bg-gradient-to-r from-yellow-600 to-red-600 rounded-lg p-8">
-                        <h3 className="text-2xl font-semibold mb-4">Data Visualization Tools (UQAC)</h3>
+                        <h3 className=" font-semibold mb-4">Data Visualization Tools (UQAC)</h3>
                         <p className="text-sm text-white mb-4">I’m currently taking a course on mastering the
                             methodology, design, and deployment of data visualization tools. I’m learning how to develop
                             dashboards, analyze needs, and ensure security and governance of the tools after
@@ -339,7 +345,7 @@ export default function Home() {
                     </div>
 
                     <div className="bg-gradient-to-r from-red-600 to-orange-600 rounded-lg p-8">
-                        <h3 className="text-2xl font-semibold mb-4">Security Vulnerabilities Management (UQAC)</h3>
+                        <h3 className=" font-semibold mb-4">Security Vulnerabilities Management (UQAC)</h3>
                         <p className="text-sm text-white mb-4">I’m currently taking a course that focuses on managing
                             system vulnerabilities, security incidents, and response stages. It covers topics like
                             secure coding (OWASP), vulnerability scanning, incident response, and cryptography, with
@@ -351,10 +357,11 @@ export default function Home() {
                     </div>
 
                     <div className="bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg p-8">
-                        <h3 className="text-2xl font-semibold mb-4">Deep Learning with Keras and TensorFlow - 3rd
+                        <h3 className=" font-semibold mb-4">Deep Learning with Keras and TensorFlow - 3rd
                             Edition</h3>
                         <p className="text-sm text-white mb-4">I’m reading the book &#34;Deep Learning with Keras and
-                            TensorFlow - 3rd Edition,&#34; which covers practical applications of deep learning using the
+                            TensorFlow - 3rd Edition,&#34; which covers practical applications of deep learning using
+                            the
                             Keras and TensorFlow libraries. The book includes real-world case studies and examples,
                             allowing hands-on learning in the field of deep learning.</p>
                         <a href="https://www.amazon.com/Deep-Learning-Keras-TensorFlow-Edition/dp/1800569023"
@@ -365,7 +372,7 @@ export default function Home() {
                     </div>
 
                     <div className="bg-gradient-to-r from-blue-800 to-indigo-600 rounded-lg p-8">
-                        <h3 className="text-2xl font-semibold mb-4">Developing Microservices with .NET (Microsoft)</h3>
+                        <h3 className=" font-semibold mb-4">Developing Microservices with .NET (Microsoft)</h3>
                         <p className="text-sm text-white mb-4">I’m currently learning how to develop and deploy
                             microservices using .NET. The course covers designing, developing, and deploying
                             microservices with modern technologies and practices, helping you build scalable, reliable,
@@ -386,7 +393,7 @@ export default function Home() {
                 <div className="space-y-8">
 
                     <div className="bg-gradient-to-r from-green-600 to-teal-600 rounded-lg p-8">
-                        <h3 className="text-2xl font-semibold mb-4">Cybersecurity Badge - TryHackMe</h3>
+                        <h3 className=" font-semibold mb-4">Cybersecurity Badge - TryHackMe</h3>
                         <iframe
                             src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1333986"
                             style={{border: 'none', width: '100%', height: '150px'}}>
@@ -396,7 +403,7 @@ export default function Home() {
                     </div>
 
                     <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg p-8">
-                        <h3 className="text-2xl font-semibold mb-4">Microsoft Certification - Prepare to develop AI
+                        <h3 className="font-semibold mb-4">Microsoft Certification - Prepare to develop AI
                             solutions on Azure</h3>
                         <p className="text-sm text-white mb-4">Certified in designing and developing microservices with
                             .NET, covering modern cloud-based application architectures.</p>
