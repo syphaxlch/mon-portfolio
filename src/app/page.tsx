@@ -426,7 +426,7 @@ export default function Home() {
                         <a href="https://learn.microsoft.com/api/achievements/share/en-us/SyphaxLakhdarchaouche-6739/ZKW6EBM2?sharingId=FC41748111551AD2"
                            target="_blank"
                            className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
-                            {translations?.viewCertificationLink || "View Certification"}
+                            {translations?.viewCertificationLink || "Certificate"}
                         </a>
                     </div>
 
