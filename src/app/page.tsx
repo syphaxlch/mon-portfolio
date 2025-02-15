@@ -377,7 +377,7 @@ export default function Home() {
                         <p className=" text-white mb-4">
                             {translations?.deepLearningDescription || "I’m reading the book 'Deep Learning with Keras and TensorFlow - 3rd Edition,' which covers practical applications of deep learning using the Keras and TensorFlow libraries. The book includes real-world case studies and examples, allowing hands-on learning in the field of deep learning."}
                         </p>
-                        <a href="https://www.amazon.com/Deep-Learning-Keras-TensorFlow-Edition/dp/1800569023"
+                        <a href="https://www.amazon.ca/-/fr/Deep-Learning-avec-Keras-TensorFlow/dp/2100847694"
                            target="_blank"
                            className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
                             {translations?.viewBookLink || "View the book"}
