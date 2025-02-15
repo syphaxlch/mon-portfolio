@@ -398,7 +398,7 @@ export default function Home() {
             </section>
 
 
-            <section id="achievements" className="bg-gray-800 text-white p-16 rounded-lg shadow-md">
+            <section id="achievements" className="bg-gray-800 text-white p-4 rounded-lg shadow-md">
                 <h2 className=" font-bold text-center mb-8">
                     {translations?.achievementsHeader || "Achievements"}
                 </h2>
