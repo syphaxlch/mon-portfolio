@@ -88,7 +88,7 @@ export default function Home() {
                     {/* Afficher le contenu traduit uniquement si les traductions sont chargées */}
                     {translations && (
                         <>
-                            <h1 className="text-4xl sm:text-5xl font-extrabold">
+                            <h1 className="font-extrabold">
                                 {translations.greeting} <span className="text-yellow-500">Syphax</span>
                             </h1>
                             <br/>
@@ -132,12 +132,12 @@ export default function Home() {
             </header>
 
 
-            <section id="connect" className="bg-gray-800 text-white m-6 p-16 rounded-lg shadow-md">
-                <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-8">
-                    {translations?.connectHeader || 'Connect with Me'}
+            <section id="connect" className="bg-gray-800 text-white p-8 rounded-lg shadow-md">
+                <h2 className=" font-bold text-center mb-6 sm:mb-8">
+                    {translations?.connectHeader || 'Social Media'}
                 </h2>
-                <p className="text-base sm:text-lg text-center mb-8">
-                    {translations?.connectDescription || 'Feel free to reach out and connect with me on these platforms.'}
+                <p className=" text-center mb-4">
+                    {translations?.connectDescription || 'Here are some platforms where you can find me'}
                 </p>
                 <div className="flex justify-center space-x-4 sm:space-x-6 pt-5">
                     <a
@@ -186,7 +186,7 @@ export default function Home() {
             </section>
 
             <section id="projects-education"
-                     className="bg-gray-800 text-white p-16 rounded-lg shadow-md animate__animated animate__fadeIn animate__delay-2s">
+                     className="bg-gray-800 text-white p-4 rounded-lg shadow-md animate__animated animate__fadeIn animate__delay-2s">
                 <div className="flex justify-center gap-8 mb-12">
                     <button
                         className={`text-lg font-semibold ${activeSection === 'projects' ? ' text-yellow-500 border-b-4 border-yellow-500' : 'text-white '}`}
@@ -204,7 +204,7 @@ export default function Home() {
 
                 {activeSection === 'projects' ? (
                     <div>
-                        <p className="text-center text-lg mb-12">{translations?.projectsDescription || 'Here are some personal projects I have worked on.'}</p>
+                        <p className="text-center mb-12">{translations?.projectsDescription || 'Here are some personal projects I have worked on.'}</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[{
                                 title: "Flutter Quiz App",
@@ -236,11 +236,11 @@ export default function Home() {
                                 }].map((project, index) => (
                                 <div key={index}
                                      className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-6 transition-all duration-300 hover:scale-105">
-                                    <h3 className="text-2xl font-semibold text-white mb-4">{project.title}</h3>
-                                    <p className="text-sm text-white mb-4">{project.description}</p>
+                                    <h3 className="font-semibold text-white mb-4">{project.title}</h3>
+                                    <p className="text-white mb-4">{project.description}</p>
                                     <div className="flex gap-4 mb-4">
                                         {project.techs.map((tech, i) => (
-                                            <Image key={i} src={tech} alt="Tech logo" width={48} height={48}/>
+                                            <Image key={i} src={tech} alt="Tech logo" width={35} height={35}/>
                                         ))}
                                     </div>
                                     <a href={project.link}
@@ -267,7 +267,7 @@ export default function Home() {
                     </div>
                 ) : (
                     <div>
-                        <p className="text-center text-lg mb-12">{translations?.educationDescription || 'Here is an overview of my academic background.'}</p>
+                        <p className="text-center mb-12">{translations?.educationDescription || 'Here is an overview of my academic background.'}</p>
                         <div className="space-y-8">
                             <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg p-8">
                                 <h3 className="text-2xl font-semibold text-white mb-4">{translations?.bachelorCS || "Bachelor's in Computer Science"}</h3>
@@ -316,17 +316,17 @@ export default function Home() {
             )}
 
 
-            <section id="realtime-activities" className="bg-gray-800 text-white p-16 rounded-lg shadow-md">
-                <h2 className="font-bold text-center mb-8">{translations?.realtimeActivitiesHeader || "What I'm Doing in Real Time"}</h2>
-                <p className="text-center text-lg mb-8">
+            <section id="realtime-activities" className="bg-gray-800 text-white p-4 rounded-lg shadow-md">
+                <h2 className="font-bold text-center mb-4">{translations?.realtimeActivitiesHeader || "What I'm Doing in Real Time"}</h2>
+                <p className="text-center mb-8">
                     {translations?.realtimeActivitiesDescription || "Here’s what I’m currently working on and learning in realtime."}
                 </p>
                 <div className="space-y-8">
 
                     {/* Machine Learning for Data Science */}
                     <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg p-8">
-                        <h3 className="font-semibold mb-4">{translations?.machineLearningCourse || "Machine Learning for Data Science (UQAC)"}</h3>
-                        <p className="text-sm text-white mb-4">
+                        <h2 className="font-semibold mb-4">{translations?.machineLearningCourse || "Machine Learning for Data Science (UQAC)"}</h2>
+                        <p className="text-white mb-4">
                             {translations?.machineLearningDescription || "I’m currently enrolled in a course that covers both supervised and unsupervised learning algorithms, applied to real-world predictive analytics problems. I’m gaining hands-on experience with tools like Scikit-Learn and Python."}
                         </p>
                         <a href="https://programmes.uqac.ca/8iar403" target="_blank"
@@ -337,8 +337,8 @@ export default function Home() {
 
                     {/* Cloud Computing */}
                     <div className="bg-gradient-to-r from-green-600 to-teal-600 rounded-lg p-8">
-                        <h3 className="font-semibold mb-4">{translations?.cloudComputingCourse || "Cloud Computing (UQAC)"}</h3>
-                        <p className="text-sm text-white mb-4">
+                        <h2 className="font-semibold mb-4">{translations?.cloudComputingCourse || "Cloud Computing (UQAC)"}</h2>
+                        <p className=" text-white mb-4">
                             {translations?.cloudComputingDescription || "I’m currently taking a course in cloud computing, focusing on cloud infrastructure, containerization (Kubernetes, Docker), CI/CD pipelines, and advanced topics such as cloud storage, security, and machine learning in the cloud."}
                         </p>
                         <a href="https://programmes.uqac.ca/8CLD202" target="_blank"
@@ -349,8 +349,8 @@ export default function Home() {
 
                     {/* Data Visualization Tools */}
                     <div className="bg-gradient-to-r from-yellow-600 to-red-600 rounded-lg p-8">
-                        <h3 className="font-semibold mb-4">{translations?.dataVisualizationToolsCourse || "Data Visualization Tools (UQAC)"}</h3>
-                        <p className="text-sm text-white mb-4">
+                        <h2 className="font-semibold mb-4">{translations?.dataVisualizationToolsCourse || "Data Visualization Tools (UQAC)"}</h2>
+                        <p className=" text-white mb-4">
                             {translations?.dataVisualizationToolsDescription || "I’m currently taking a course on mastering the methodology, design, and deployment of data visualization tools. I’m learning how to develop dashboards, analyze needs, and ensure security and governance of the tools after deployment."}
                         </p>
                         <a href="https://programmes.uqac.ca/8INF416" target="_blank"
@@ -361,8 +361,8 @@ export default function Home() {
 
                     {/* Security Vulnerabilities Management */}
                     <div className="bg-gradient-to-r from-red-600 to-orange-600 rounded-lg p-8">
-                        <h3 className="font-semibold mb-4">{translations?.securityVulnerabilitiesManagementCourse || "Security Vulnerabilities Management (UQAC)"}</h3>
-                        <p className="text-sm text-white mb-4">
+                        <h2 className="font-semibold mb-4">{translations?.securityVulnerabilitiesManagementCourse || "Security Vulnerabilities Management (UQAC)"}</h2>
+                        <p className=" text-white mb-4">
                             {translations?.securityVulnerabilitiesManagementDescription || "I’m currently taking a course that focuses on managing system vulnerabilities, security incidents, and response stages. It covers topics like secure coding (OWASP), vulnerability scanning, incident response, and cryptography, with practical applications in security intelligence and risk management."}
                         </p>
                         <a href="https://programmes.uqac.ca/8SEC201" target="_blank"
@@ -373,8 +373,8 @@ export default function Home() {
 
                     {/* Deep Learning with Keras and TensorFlow */}
                     <div className="bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg p-8">
-                        <h3 className="font-semibold mb-4">{translations?.deepLearningBook || "Deep Learning with Keras and TensorFlow - 3rd Edition"}</h3>
-                        <p className="text-sm text-white mb-4">
+                        <h2 className="font-semibold mb-4">{translations?.deepLearningBook || "Deep Learning with Keras and TensorFlow - 3rd Edition"}</h2>
+                        <p className=" text-white mb-4">
                             {translations?.deepLearningDescription || "I’m reading the book 'Deep Learning with Keras and TensorFlow - 3rd Edition,' which covers practical applications of deep learning using the Keras and TensorFlow libraries. The book includes real-world case studies and examples, allowing hands-on learning in the field of deep learning."}
                         </p>
                         <a href="https://www.amazon.com/Deep-Learning-Keras-TensorFlow-Edition/dp/1800569023"
@@ -386,10 +386,7 @@ export default function Home() {
 
                     {/* Developing Microservices with .NET */}
                     <div className="bg-gradient-to-r from-blue-800 to-indigo-600 rounded-lg p-8">
-                        <h3 className="font-semibold mb-4">{translations?.microservicesCourse || "Developing Microservices with .NET (Microsoft)"}</h3>
-                        <p className="text-sm text-white mb-4">
-                            {translations?.microservicesDescription || "I’m currently learning how to develop and deploy microservices using .NET. The course covers designing, developing, and deploying microservices with modern technologies and practices, helping you build scalable, reliable, and performant applications."}
-                        </p>
+                        <h2 className="font-semibold mb-4">{translations?.microservicesCourse || "Developing Microservices with .NET (Microsoft)"}</h2>
                         <a href="https://learn.microsoft.com/fr-ca/training/modules/dotnet-microservices/"
                            target="_blank"
                            className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
@@ -402,10 +399,10 @@ export default function Home() {
 
 
             <section id="achievements" className="bg-gray-800 text-white p-16 rounded-lg shadow-md">
-                <h2 className="text-4xl font-bold text-center mb-8">
+                <h2 className=" font-bold text-center mb-8">
                     {translations?.achievementsHeader || "Achievements"}
                 </h2>
-                <p className="text-center text-lg mb-8">
+                <p className="text-center mb-8">
                     {translations?.achievementsDescription || "Here are some of my certifications and achievements."}
                 </p>
                 <div className="space-y-8">
@@ -419,9 +416,6 @@ export default function Home() {
                             src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1333986"
                             style={{border: 'none', width: '100%', height: '150px'}}
                         ></iframe>
-                        <p className="text-sm text-white mt-2">
-                            {translations?.cybersecurityBadgeDescription || "My progress and achievements in cybersecurity challenges."}
-                        </p>
                     </div>
 
                     {/* Microsoft Certification */}
@@ -429,9 +423,6 @@ export default function Home() {
                         <h3 className="font-semibold mb-4">
                             {translations?.microsoftCertificationTitle || "Microsoft Certification - Prepare to develop AI solutions on Azure"}
                         </h3>
-                        <p className="text-sm text-white mb-4">
-                            {translations?.microsoftCertificationDescription || "Certified in designing and developing microservices with .NET, covering modern cloud-based application architectures."}
-                        </p>
                         <a href="https://learn.microsoft.com/api/achievements/share/en-us/SyphaxLakhdarchaouche-6739/ZKW6EBM2?sharingId=FC41748111551AD2"
                            target="_blank"
                            className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
@@ -447,9 +438,6 @@ export default function Home() {
                 <h2 className="text-4xl font-bold text-center mb-8">
                     {translations?.contactHeader || "Contact Me"}
                 </h2>
-                <p className="text-center text-lg mb-12">
-                    {translations?.contactDescription || "Send me a message, I would be happy to answer your questions."}
-                </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6 max-w-lg mx-auto">
                     <div className="flex flex-col">
