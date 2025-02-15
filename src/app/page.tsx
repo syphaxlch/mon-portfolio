@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import '../../styles/globals.css';
@@ -17,6 +17,20 @@ export default function Home() {
     const [activeSection, setActiveSection] = useState<'projects' | 'education'>('projects'); // Pour alterner entre les sections
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [videoSrc, setVideoSrc] = useState('');
+    const [language, setLanguage] = useState('fr'); // Langue active (par défaut anglais)
+    const [translations, setTranslations] = useState<any>(null); // Traductions chargées
+
+    // Fonction pour charger le fichier de traduction
+    const loadTranslations = async (lang: string) => {
+        const response = await fetch(`/locales/${lang}.json`);
+        const data = await response.json();
+        setTranslations(data);
+    };
+
+    // Charger les traductions au montage du composant ou changement de langue
+    useEffect(() => {
+        loadTranslations(language);
+    }, [language]);
 
     const handleChange = (e: { target: { name: string; value: string; }; }) => {
         const { name, value } = e.target;
@@ -45,7 +59,6 @@ export default function Home() {
             } else {
                 setIsError(true);
             }
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
             setIsError(true);
         }
@@ -63,23 +76,34 @@ export default function Home() {
 
     return (
         <div className="gap-16 font-mono text-white bg-[#010e28]
-        bg-[linear-gradient(to_bottom,_#082740_1px,_transparent_1px),_linear-gradient(to_right,_#082740_1px,_transparent_1px)] [background-size:30px_30px] bg-center animate-bgmove ">
+        bg-[linear-gradient(to_bottom,_#082740_1px,_transparent_1px),_linear-gradient(to_right,_#082740_1px,_transparent_1px)] [background-size:30px_30px] bg-center animate-bgmove">
             <Head>
                 {/* eslint-disable-next-line @next/next/no-page-custom-font */}
                 <link rel="stylesheet"
                       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap"/>
-
             </Head>
-
 
             <header className="text-center sm:text-left animate__animated animate__fadeIn animate__delay-1s mb-3">
                 <div className="p-16">
-                    <h1 className="text-4xl sm:text-5xl font-extrabold">
-                        Hi, I&#39;m <span className="text-yellow-500">Syphax</span>
-                    </h1>
-                    <br/>
-                    <p className="text-l">Computer science student, I blend curiosity and efficiency to craft
-                        solutions that are both innovative and practical.</p>
+                    {/* Afficher le contenu traduit uniquement si les traductions sont chargées */}
+                    {translations && (
+                        <>
+                            <h1 className="text-4xl sm:text-5xl font-extrabold">
+                                {translations.greeting} <span className="text-yellow-500">Syphax</span>
+                            </h1>
+                            <br/>
+                            <p className="text-l">{translations.description}</p>
+                        </>
+                    )}
+                </div>
+
+                {/* Bouton EN | FR pour changer la langue */}
+                <div className="absolute top-4 right-4">
+                    <button
+                        onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
+                        className="bg-white text-black py-2 px-6 shadow-md transform transition-all duration-300 ease-in-out hover:bg-yellow-500 hover:text-white hover:shadow-xl focus:outline-none ">
+                        {language === 'en' ? 'FR' : 'EN'}
+                    </button>
                 </div>
 
                 <div className="icons-slider-container w-full overflow-hidden relative">
@@ -106,24 +130,26 @@ export default function Home() {
                     </div>
                 </div>
             </header>
+
+
             <section id="connect" className="bg-gray-800 text-white m-6 p-16 rounded-lg shadow-md">
                 <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-8">
-                    Connect with Me
+                    {translations?.connectHeader || 'Connect with Me'}
                 </h2>
                 <p className="text-base sm:text-lg text-center mb-8">
-                    Feel free to reach out and connect with me on these platforms.
+                    {translations?.connectDescription || 'Feel free to reach out and connect with me on these platforms.'}
                 </p>
                 <div className="flex justify-center space-x-4 sm:space-x-6 pt-5">
                     <a
                         href="https://github.com/syphaxlch"
                         target="_blank"
-                        className="p-3 sm:p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
-  bg-transparent sm:bg-gradient-to-r sm:from-gray-700 sm:to-gray-900 lg:bg-gradient-to-r lg:from-gray-700 lg:to-gray-900"
+                        aria-label="Visit my GitHub profile"
+                        className="p-3 sm:p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl bg-transparent sm:bg-gradient-to-r sm:from-gray-700 sm:to-gray-900 lg:bg-gradient-to-r lg:from-gray-700 lg:to-gray-900"
                     >
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                             alt="GitHub"
-                            className=" rounded-lg transition-all duration-300"
+                            className="rounded-lg transition-all duration-300"
                         />
                         <span className="text-white font-semibold hidden sm:inline">GitHub</span>
                     </a>
@@ -131,10 +157,9 @@ export default function Home() {
                     <a
                         href="https://www.linkedin.com/in/syphaxlch"
                         target="_blank"
-                        className="p-3 sm:p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
-                              bg-transparent sm:bg-gradient-to-r sm:from-blue-500 sm:to-blue-700 lg:bg-gradient-to-r lg:from-blue-500 lg:to-blue-700"
+                        aria-label="Visit my LinkedIn profile"
+                        className="p-3 sm:p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl bg-transparent sm:bg-gradient-to-r sm:from-blue-500 sm:to-blue-700 lg:bg-gradient-to-r lg:from-blue-500 lg:to-blue-700"
                     >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
                             alt="LinkedIn"
@@ -146,10 +171,9 @@ export default function Home() {
                     <a
                         href="https://discord.com/users/904655608828010517"
                         target="_blank"
-                        className="p-3 sm:p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl
-                        bg-transparent sm:bg-gradient-to-r sm:from-purple-600 sm:to-indigo-700 lg:bg-gradient-to-r lg:from-purple-600 lg:to-indigo-700"
+                        aria-label="Visit my Discord profile"
+                        className="p-3 sm:p-4 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-110 hover:brightness-110 hover:drop-shadow-xl bg-transparent sm:bg-gradient-to-r sm:from-purple-600 sm:to-indigo-700 lg:bg-gradient-to-r lg:from-purple-600 lg:to-indigo-700"
                     >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png"
                             alt="Discord"
@@ -161,7 +185,6 @@ export default function Home() {
                 </div>
             </section>
 
-
             <section id="projects-education"
                      className="bg-gray-800 text-white p-16 rounded-lg shadow-md animate__animated animate__fadeIn animate__delay-2s">
                 <div className="flex justify-center gap-8 mb-12">
@@ -169,7 +192,7 @@ export default function Home() {
                         className={`text-lg font-semibold ${activeSection === 'projects' ? ' text-yellow-500 border-b-4 border-yellow-500' : 'text-white '}`}
                         onClick={() => setActiveSection('projects')}>
                         <i className="fas fa-project-diagram animate__animated animate__fadeIn animate__delay-1s"></i>
-                        My Projects
+                        {translations?.projectsEducationHeader || 'My Projects'}
                     </button>
                     <button
                         className={`text-lg font-semibold ${activeSection === 'education' ? 'text-yellow-500 border-b-4 border-yellow-500' : 'text-white'}`}
@@ -181,28 +204,28 @@ export default function Home() {
 
                 {activeSection === 'projects' ? (
                     <div>
-                        <p className="text-center text-lg mb-12">Here are some personal projects I have worked on.</p>
+                        <p className="text-center text-lg mb-12">{translations?.projectsDescription || 'Here are some personal projects I have worked on.'}</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[{
                                 title: "Flutter Quiz App",
                                 description: "A Flutter mobile app for creating interactive quizzes.",
                                 techs: ["/flutter.svg", "/dart.svg", "/firebase.png"],
                                 link: "https://github.com/syphaxlch/Flutter_quiz_app",
-                                demo: "quiz-flutter.gif", // Lien vers la vidéo locale
+                                demo: "quiz-flutter.gif",
                             },
                                 {
                                     title: "PHP Ecommerce",
                                     description: "An e-commerce site built with PHP, including user management.",
                                     techs: ["/php.svg", "/apache.svg"],
                                     link: "https://github.com/syphaxlch/PHP-ecommerce",
-                                    demo: "", // Lien vers la vidéo locale
+                                    demo: "",
                                 },
                                 {
                                     title: "Extension for Email Filtering (with LLM)",
                                     description: "A Chrome extension using LangChain and Flask for classifying emails.",
                                     techs: ["/Flask.svg", "/Llama3.png", "/langchain.png"],
                                     link: "https://github.com/syphaxlch/Email_Analysis_with_LLM",
-                                    demo: "/llm-demo.mp4", // Lien vers la vidéo locale
+                                    demo: "/llm-demo.mp4",
                                 },
                                 {
                                     title: "Azure DevOps - VM Scale Set",
@@ -227,7 +250,7 @@ export default function Home() {
                                     <a
                                         href={project.demo ? project.demo : '#'}
                                         onClick={(e) => {
-                                            if (!project.demo) e.preventDefault(); // Empêche le clic si pas de lien
+                                            if (!project.demo) e.preventDefault();
                                             else openModal(project.demo);
                                         }}
                                         className={`font-bold py-2 px-4 rounded border transition duration-300 ml-5 
@@ -244,39 +267,29 @@ export default function Home() {
                     </div>
                 ) : (
                     <div>
-                        <p className="text-center text-lg mb-12">Here is an overview of my academic background.</p>
+                        <p className="text-center text-lg mb-12">{translations?.educationDescription || 'Here is an overview of my academic background.'}</p>
                         <div className="space-y-8">
                             <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg p-8">
-                                <h3 className="text-2xl font-semibold text-white mb-4">Bachelor&#39;s in Computer
-                                    Science</h3>
-                                <p className="text-sm text-white mb-2">Université du Québec à Chicoutimi (UQAC),
-                                    Chicoutimi, QC
-                                </p>
+                                <h3 className="text-2xl font-semibold text-white mb-4">{translations?.bachelorCS || "Bachelor's in Computer Science"}</h3>
+                                <p className="text-sm text-white mb-2">{translations?.bachelorCSDetails || 'Université du Québec à Chicoutimi (UQAC), Chicoutimi, QC'}</p>
                                 <p className="text-sm text-white">Fall 2023 - Winter 2026</p>
                             </div>
 
                             <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg p-8">
-                                <h3 className="text-2xl font-semibold text-white mb-4">Master&#39;s in Systems
-                                    Engineering</h3>
-                                <p className="text-sm text-white mb-2">Mouloud Mammeri University of Tizi-Ouzou
-                                    (UMMTO), Tizi-Ouzou, Algeria</p>
+                                <h3 className="text-2xl font-semibold text-white mb-4">{translations?.mastersSE || "Master's in Systems Engineering"}</h3>
+                                <p className="text-sm text-white mb-2">{translations?.mastersSEDetails || 'Mouloud Mammeri University of Tizi-Ouzou (UMMTO), Tizi-Ouzou, Algeria'}</p>
                                 <p className="text-sm text-white">Fall 2022 - Winter 2023</p>
                             </div>
 
                             <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg p-8">
-                                <h3 className="text-2xl font-semibold text-white mb-4">Bachelor&#39;s in Computer
-                                    Systems</h3>
-                                <p className="text-sm text-white mb-2">
-                                    Mouloud Mammeri University of Tizi-Ouzou
-                                    (UMMTO), Tizi-Ouzou, Algeria</p>
+                                <h3 className="text-2xl font-semibold text-white mb-4">{translations?.bachelorCSSystems || "Bachelor's in Computer Systems"}</h3>
+                                <p className="text-sm text-white mb-2">{translations?.bachelorCSSystemsDetails || 'Mouloud Mammeri University of Tizi-Ouzou (UMMTO), Tizi-Ouzou, Algeria'}</p>
                                 <p className="text-sm text-white">Fall 2019 - Winter 2022</p>
                             </div>
 
                             <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg p-8">
-                                <h3 className="text-2xl font-semibold text-white mb-4">Mathematics-Computer Science</h3>
-                                <p className="text-sm text-white mb-2">
-                                    Mouloud Mammeri University of Tizi-Ouzou
-                                    (UMMTO), Tizi-Ouzou, Algeria</p>
+                                <h3 className="text-2xl font-semibold text-white mb-4">{translations?.mathCS || "Mathematics-Computer Science"}</h3>
+                                <p className="text-sm text-white mb-2">{translations?.mathCSDetails || 'Mouloud Mammeri University of Tizi-Ouzou (UMMTO), Tizi-Ouzou, Algeria'}</p>
                                 <p className="text-sm text-white">Fall 2018 - Winter 2019</p>
                             </div>
                         </div>
@@ -289,7 +302,7 @@ export default function Home() {
                 <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-8 rounded-lg w-4/5 md:w-1/2">
                         <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-xl font-semibold">Demo</h3>
+                            <h3 className="text-xl font-semibold">{translations?.demo || 'Demo'}</h3>
                             <button onClick={closeModal} className="text-xl text-red-600">X</button>
                         </div>
                         <div className="w-full">
@@ -304,162 +317,185 @@ export default function Home() {
 
 
             <section id="realtime-activities" className="bg-gray-800 text-white p-16 rounded-lg shadow-md">
-                <h2 className="font-bold text-center mb-8">What I&#39;m Doing in Real Time</h2>
-                <p className="text-center text-lg mb-8">Here’s what I’m currently working on and learning in real
-                    time.</p>
+                <h2 className="font-bold text-center mb-8">{translations?.realtimeActivitiesHeader || "What I'm Doing in Real Time"}</h2>
+                <p className="text-center text-lg mb-8">
+                    {translations?.realtimeActivitiesDescription || "Here’s what I’m currently working on and learning in realtime."}
+                </p>
                 <div className="space-y-8">
 
-
+                    {/* Machine Learning for Data Science */}
                     <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg p-8">
-                        <h3 className="font-semibold mb-4">Machine Learning for Data Science (UQAC)</h3>
-                        <p className="text-sm text-white mb-4">I’m currently enrolled in a course that covers both
-                            supervised and unsupervised learning algorithms, applied to real-world predictive analytics
-                            problems. I’m gaining hands-on experience with tools like Scikit-Learn and Python.</p>
+                        <h3 className="font-semibold mb-4">{translations?.machineLearningCourse || "Machine Learning for Data Science (UQAC)"}</h3>
+                        <p className="text-sm text-white mb-4">
+                            {translations?.machineLearningDescription || "I’m currently enrolled in a course that covers both supervised and unsupervised learning algorithms, applied to real-world predictive analytics problems. I’m gaining hands-on experience with tools like Scikit-Learn and Python."}
+                        </p>
                         <a href="https://programmes.uqac.ca/8iar403" target="_blank"
                            className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
-                            View the course
+                            {translations?.viewCourseLink1 || "View the course"}
                         </a>
                     </div>
 
+                    {/* Cloud Computing */}
                     <div className="bg-gradient-to-r from-green-600 to-teal-600 rounded-lg p-8">
-                        <h3 className="font-semibold mb-4">Cloud Computing (UQAC)</h3>
-                        <p className="text-sm text-white mb-4">I’m currently taking a course in cloud computing,
-                            focusing on cloud infrastructure, containerization (Kubernetes, Docker), CI/CD pipelines,
-                            and advanced topics such as cloud storage, security, and machine learning in the cloud.</p>
+                        <h3 className="font-semibold mb-4">{translations?.cloudComputingCourse || "Cloud Computing (UQAC)"}</h3>
+                        <p className="text-sm text-white mb-4">
+                            {translations?.cloudComputingDescription || "I’m currently taking a course in cloud computing, focusing on cloud infrastructure, containerization (Kubernetes, Docker), CI/CD pipelines, and advanced topics such as cloud storage, security, and machine learning in the cloud."}
+                        </p>
                         <a href="https://programmes.uqac.ca/8CLD202" target="_blank"
                            className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
-                            View the course
+                            {translations?.viewCourseLink2 || "View the course"}
                         </a>
                     </div>
 
+                    {/* Data Visualization Tools */}
                     <div className="bg-gradient-to-r from-yellow-600 to-red-600 rounded-lg p-8">
-                        <h3 className=" font-semibold mb-4">Data Visualization Tools (UQAC)</h3>
-                        <p className="text-sm text-white mb-4">I’m currently taking a course on mastering the
-                            methodology, design, and deployment of data visualization tools. I’m learning how to develop
-                            dashboards, analyze needs, and ensure security and governance of the tools after
-                            deployment.</p>
+                        <h3 className="font-semibold mb-4">{translations?.dataVisualizationToolsCourse || "Data Visualization Tools (UQAC)"}</h3>
+                        <p className="text-sm text-white mb-4">
+                            {translations?.dataVisualizationToolsDescription || "I’m currently taking a course on mastering the methodology, design, and deployment of data visualization tools. I’m learning how to develop dashboards, analyze needs, and ensure security and governance of the tools after deployment."}
+                        </p>
                         <a href="https://programmes.uqac.ca/8INF416" target="_blank"
                            className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
-                            View the course
+                            {translations?.viewCourseLink3 || "View the course"}
                         </a>
                     </div>
 
+                    {/* Security Vulnerabilities Management */}
                     <div className="bg-gradient-to-r from-red-600 to-orange-600 rounded-lg p-8">
-                        <h3 className=" font-semibold mb-4">Security Vulnerabilities Management (UQAC)</h3>
-                        <p className="text-sm text-white mb-4">I’m currently taking a course that focuses on managing
-                            system vulnerabilities, security incidents, and response stages. It covers topics like
-                            secure coding (OWASP), vulnerability scanning, incident response, and cryptography, with
-                            practical applications in security intelligence and risk management.</p>
+                        <h3 className="font-semibold mb-4">{translations?.securityVulnerabilitiesManagementCourse || "Security Vulnerabilities Management (UQAC)"}</h3>
+                        <p className="text-sm text-white mb-4">
+                            {translations?.securityVulnerabilitiesManagementDescription || "I’m currently taking a course that focuses on managing system vulnerabilities, security incidents, and response stages. It covers topics like secure coding (OWASP), vulnerability scanning, incident response, and cryptography, with practical applications in security intelligence and risk management."}
+                        </p>
                         <a href="https://programmes.uqac.ca/8SEC201" target="_blank"
                            className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
-                            View the course
+                            {translations?.viewCourseLink4 || "View the course"}
                         </a>
                     </div>
 
+                    {/* Deep Learning with Keras and TensorFlow */}
                     <div className="bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg p-8">
-                        <h3 className=" font-semibold mb-4">Deep Learning with Keras and TensorFlow - 3rd
-                            Edition</h3>
-                        <p className="text-sm text-white mb-4">I’m reading the book &#34;Deep Learning with Keras and
-                            TensorFlow - 3rd Edition,&#34; which covers practical applications of deep learning using
-                            the
-                            Keras and TensorFlow libraries. The book includes real-world case studies and examples,
-                            allowing hands-on learning in the field of deep learning.</p>
+                        <h3 className="font-semibold mb-4">{translations?.deepLearningBook || "Deep Learning with Keras and TensorFlow - 3rd Edition"}</h3>
+                        <p className="text-sm text-white mb-4">
+                            {translations?.deepLearningDescription || "I’m reading the book 'Deep Learning with Keras and TensorFlow - 3rd Edition,' which covers practical applications of deep learning using the Keras and TensorFlow libraries. The book includes real-world case studies and examples, allowing hands-on learning in the field of deep learning."}
+                        </p>
                         <a href="https://www.amazon.com/Deep-Learning-Keras-TensorFlow-Edition/dp/1800569023"
                            target="_blank"
                            className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
-                            View the book
+                            {translations?.viewBookLink || "View the book"}
                         </a>
                     </div>
 
+                    {/* Developing Microservices with .NET */}
                     <div className="bg-gradient-to-r from-blue-800 to-indigo-600 rounded-lg p-8">
-                        <h3 className=" font-semibold mb-4">Developing Microservices with .NET (Microsoft)</h3>
-                        <p className="text-sm text-white mb-4">I’m currently learning how to develop and deploy
-                            microservices using .NET. The course covers designing, developing, and deploying
-                            microservices with modern technologies and practices, helping you build scalable, reliable,
-                            and performant applications.</p>
+                        <h3 className="font-semibold mb-4">{translations?.microservicesCourse || "Developing Microservices with .NET (Microsoft)"}</h3>
+                        <p className="text-sm text-white mb-4">
+                            {translations?.microservicesDescription || "I’m currently learning how to develop and deploy microservices using .NET. The course covers designing, developing, and deploying microservices with modern technologies and practices, helping you build scalable, reliable, and performant applications."}
+                        </p>
                         <a href="https://learn.microsoft.com/fr-ca/training/modules/dotnet-microservices/"
                            target="_blank"
                            className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
-                            View the course
+                            {translations?.viewCourseLink5 || "View the course"}
                         </a>
                     </div>
+
                 </div>
             </section>
 
 
             <section id="achievements" className="bg-gray-800 text-white p-16 rounded-lg shadow-md">
-                <h2 className="text-4xl font-bold text-center mb-8">Achievements</h2>
-                <p className="text-center text-lg mb-8">Here are some of my certifications and achievements.</p>
+                <h2 className="text-4xl font-bold text-center mb-8">
+                    {translations?.achievementsHeader || "Achievements"}
+                </h2>
+                <p className="text-center text-lg mb-8">
+                    {translations?.achievementsDescription || "Here are some of my certifications and achievements."}
+                </p>
                 <div className="space-y-8">
 
+                    {/* Cybersecurity Badge */}
                     <div className="bg-gradient-to-r from-green-600 to-teal-600 rounded-lg p-8">
-                        <h3 className=" font-semibold mb-4">Cybersecurity Badge - TryHackMe</h3>
+                        <h3 className="font-semibold mb-4">
+                            {translations?.cybersecurityBadgeTitle || "Cybersecurity Badge - TryHackMe"}
+                        </h3>
                         <iframe
                             src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1333986"
-                            style={{border: 'none', width: '100%', height: '150px'}}>
-                        </iframe>
-                        <p className="text-sm text-white mt-2">My progress and achievements in cybersecurity
-                            challenges.</p>
+                            style={{border: 'none', width: '100%', height: '150px'}}
+                        ></iframe>
+                        <p className="text-sm text-white mt-2">
+                            {translations?.cybersecurityBadgeDescription || "My progress and achievements in cybersecurity challenges."}
+                        </p>
                     </div>
 
+                    {/* Microsoft Certification */}
                     <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg p-8">
-                        <h3 className="font-semibold mb-4">Microsoft Certification - Prepare to develop AI
-                            solutions on Azure</h3>
-                        <p className="text-sm text-white mb-4">Certified in designing and developing microservices with
-                            .NET, covering modern cloud-based application architectures.</p>
+                        <h3 className="font-semibold mb-4">
+                            {translations?.microsoftCertificationTitle || "Microsoft Certification - Prepare to develop AI solutions on Azure"}
+                        </h3>
+                        <p className="text-sm text-white mb-4">
+                            {translations?.microsoftCertificationDescription || "Certified in designing and developing microservices with .NET, covering modern cloud-based application architectures."}
+                        </p>
                         <a href="https://learn.microsoft.com/api/achievements/share/en-us/SyphaxLakhdarchaouche-6739/ZKW6EBM2?sharingId=FC41748111551AD2"
                            target="_blank"
                            className="text-white hover:text-gray-200 font-bold py-2 px-4 rounded bg-transparent border border-white hover:bg-white transition duration-300">
-                            View Certification
+                            {translations?.viewCertificationLink || "View Certification"}
                         </a>
                     </div>
 
                 </div>
             </section>
 
-
             <section id="contact"
                      className="bg-gray-800 text-white p-16 rounded-lg shadow-md animate__animated animate__fadeIn animate__delay-2s">
-                <h2 className="text-4xl font-bold text-center mb-8">Contact Me</h2>
-                <p className="text-center text-lg mb-12">Send me a message, I would be happy to answer your
-                    questions.</p>
+                <h2 className="text-4xl font-bold text-center mb-8">
+                    {translations?.contactHeader || "Contact Me"}
+                </h2>
+                <p className="text-center text-lg mb-12">
+                    {translations?.contactDescription || "Send me a message, I would be happy to answer your questions."}
+                </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6 max-w-lg mx-auto">
                     <div className="flex flex-col">
-                        <label htmlFor="name" className="text-sm font-semibold">Name</label>
+                        <label htmlFor="name" className="text-sm font-semibold">
+                            {translations?.nameLabel || "Name"}
+                        </label>
                         <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}
                                className="bg-gray-700 text-white p-3 rounded-lg" required/>
                     </div>
 
                     <div className="flex flex-col">
-                        <label htmlFor="email" className="text-sm font-semibold">Email</label>
+                        <label htmlFor="email" className="text-sm font-semibold">
+                            {translations?.emailLabel || "Email"}
+                        </label>
                         <input type="email" id="email" name="email" value={formData.email} onChange={handleChange}
                                className="bg-gray-700 text-white p-3 rounded-lg" required/>
                     </div>
 
                     <div className="flex flex-col">
-                        <label htmlFor="message" className="text-sm font-semibold">Message</label>
+                        <label htmlFor="message" className="text-sm font-semibold">
+                            {translations?.messageLabel || "Message"}
+                        </label>
                         <textarea id="message" name="message" value={formData.message} onChange={handleChange}
                                   className="bg-gray-700 text-white p-3 rounded-lg" required/>
                     </div>
 
                     <button type="submit"
                             className="w-full py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-600 transition">
-                        Send Message
+                        {translations?.sendMessageButton || "Send Message"}
                     </button>
                 </form>
 
                 {isSuccess && (
-                    <div className="text-center text-green-500 mt-4">Your message has been sent successfully!</div>
+                    <div className="text-center text-green-500 mt-4">
+                        {translations?.messageSuccess || "Your message has been sent successfully!"}
+                    </div>
                 )}
                 {isError && (
-                    <div className="text-center text-red-500 mt-4">There was an error, please try again later.</div>
+                    <div className="text-center text-red-500 mt-4">
+                        {translations?.messageError || "There was an error, please try again later."}
+                    </div>
                 )}
             </section>
 
-
-            <footer className="w-full text-center text-gray-400 mt-10 py-4 ">
-                © {new Date().getFullYear()} Syphax LAKHDARCHAOUCHE All rights reserved.
+            <footer className="w-full text-center text-gray-400 mt-10 py-4">
+                {translations?.footerText ? translations.footerText.replace("{year}", new Date().getFullYear()) : `© ${new Date().getFullYear()} Syphax LAKHDARCHAOUCHE All rights reserved.`}
             </footer>
 
         </div>

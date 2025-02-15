@@ -1,0 +1,42 @@
+{
+  "greeting": "Hi, I'm",
+  "description": "Computer science student, I blend curiosity and efficiency to craft solutions that are both innovative and practical.",
+
+
+
+
+
+
+
+
+
+
+  "realtimeActivitiesHeader": "What I'm Doing in Real Time",
+  "realtimeActivitiesDescription": "Here’s what I’m currently working on and learning in real time.",
+
+  "machineLearningCourse": "Machine Learning for Data Science (UQAC)",
+  "machineLearningDescription": "I’m currently enrolled in a course that covers both supervised and unsupervised learning algorithms, applied to real-world predictive analytics problems. I’m gaining hands-on experience with tools like Scikit-Learn and Python.",
+  "viewCourseLink1": "View the course",
+
+  "cloudComputingCourse": "Cloud Computing (UQAC)",
+  "cloudComputingDescription": "I’m currently taking a course in cloud computing, focusing on cloud infrastructure, containerization (Kubernetes, Docker), CI/CD pipelines, and advanced topics such as cloud storage, security, and machine learning in the cloud.",
+  "viewCourseLink2": "View the course",
+
+  "dataVisualizationToolsCourse": "Data Visualization Tools (UQAC)",
+  "dataVisualizationToolsDescription": "I’m currently taking a course on mastering the methodology, design, and deployment of data visualization tools. I’m learning how to develop dashboards, analyze needs, and ensure security and governance of the tools after deployment.",
+  "viewCourseLink3": "View the course",
+
+  "securityVulnerabilitiesManagementCourse": "Security Vulnerabilities Management (UQAC)",
+  "securityVulnerabilitiesManagementDescription": "I’m currently taking a course that focuses on managing system vulnerabilities, security incidents, and response stages. It covers topics like secure coding (OWASP), vulnerability scanning, incident response, and cryptography, with practical applications in security intelligence and risk management.",
+  "viewCourseLink4": "View the course",
+
+  "deepLearningBook": "Deep Learning with Keras and TensorFlow - 3rd Edition",
+  "deepLearningDescription": "I’m reading the book 'Deep Learning with Keras and TensorFlow - 3rd Edition,' which covers practical applications of deep learning using the Keras and TensorFlow libraries. The book includes real-world case studies and examples, allowing hands-on learning in the field of deep learning.",
+  "viewBookLink": "View the book",
+
+  "microservicesCourse": "Developing Microservices with .NET (Microsoft)",
+  "microservicesDescription": "I’m currently learning how to develop and deploy microservices using .NET. The course covers designing, developing, and deploying microservices with modern technologies and practices, helping you build scalable, reliable, and performant applications.",
+  "viewCourseLink5": "View the course"
+
+
+}

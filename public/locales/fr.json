@@ -1,0 +1,79 @@
+{
+
+  "greeting": "Salut, je suis",
+  "description": "Étudiant en informatique, j'associe curiosité et efficacité pour créer des solutions innovantes et pratiques.",
+
+
+  "connectHeader": "Contactez-moi",
+  "connectDescription": "N'hésitez pas à me contacter et à vous connecter avec moi sur ces plateformes.",
+
+
+
+  "projectsEducationHeader": "Projets",
+  "projectsDescription": "Voici quelques projets personnels sur lesquels j'ai travaillé.",
+  "educationDescription": "Voici un aperçu de mon parcours académique.",
+  "bachelorCS": "Baccalauréat en informatique",
+  "bachelorCSDetails": "Université du Québec à Chicoutimi (UQAC), Chicoutimi, QC - Automne 2023 - Hiver 2026",
+  "mastersSE": "Master en ing´enierie des syst`emes d’information",
+  "mastersSEDetails": "Université Mouloud Mammeri de Tizi-Ouzou (UMMTO), Tizi-Ouzou, Algérie - Automne 2022 - Hiver 2023",
+  "bachelorCSSystems": "Licence en systèmes informatiques",
+  "bachelorCSSystemsDetails": "Université Mouloud Mammeri de Tizi-Ouzou (UMMTO), Tizi-Ouzou, Algérie - Automne 2019 - Hiver 2022",
+  "mathCS": "Mathématiques-Informatique",
+  "mathCSDetails": "Université Mouloud Mammeri de Tizi-Ouzou (UMMTO), Tizi-Ouzou, Algérie - Automne 2018 - Hiver 2019",
+
+
+
+  "realtimeActivitiesHeader": "Ce que je fais en temps réel",
+  "realtimeActivitiesDescription": "Voici ce sur quoi je travaille et ce que j'apprends actuellement en temps réel.",
+
+  "machineLearningCourse": "Apprentissage automatique pour la science des données (UQAC)",
+  "machineLearningDescription": "Je suis actuellement inscrit à un cours qui couvre les algorithmes d'apprentissage supervisé et non supervisé, appliqués à des problèmes d'analyse prédictive réels. J'acquiers une expérience pratique avec des outils comme Scikit-Learn et Python.",
+  "viewCourseLink1": "Voir le cours",
+
+  "cloudComputingCourse": "Informatique en nuage (UQAC)",
+  "cloudComputingDescription": "Je suis actuellement en train de suivre un cours sur l'informatique en nuage, en me concentrant sur l'infrastructure cloud, la containerisation (Kubernetes, Docker), les pipelines CI/CD et des sujets avancés comme le stockage cloud, la sécurité et l'apprentissage automatique dans le cloud.",
+  "viewCourseLink2": "Voir le cours",
+
+  "dataVisualizationToolsCourse": "Outils de visualisation de données (UQAC)",
+  "dataVisualizationToolsDescription": "Je suis actuellement en train de suivre un cours sur la maîtrise de la méthodologie, de la conception et du déploiement des outils de visualisation de données. J'apprends à développer des tableaux de bord, analyser les besoins et garantir la sécurité et la gouvernance des outils après leur déploiement.",
+  "viewCourseLink3": "Voir le cours",
+
+  "securityVulnerabilitiesManagementCourse": "Gestion des vulnérabilités de sécurité (UQAC)",
+  "securityVulnerabilitiesManagementDescription": "Je suis actuellement en train de suivre un cours qui se concentre sur la gestion des vulnérabilités des systèmes, les incidents de sécurité et les étapes de réponse. Il couvre des sujets comme la programmation sécurisée (OWASP), l'analyse des vulnérabilités, la réponse aux incidents et la cryptographie, avec des applications pratiques dans l'intelligence de sécurité et la gestion des risques.",
+  "viewCourseLink4": "Voir le cours",
+
+  "deepLearningBook": "Apprentissage profond avec Keras et TensorFlow - 3e édition",
+  "deepLearningDescription": "Je lis le livre \"Deep Learning with Keras and TensorFlow - 3rd Edition\", qui couvre les applications pratiques de l'apprentissage profond en utilisant les bibliothèques Keras et TensorFlow. Le livre inclut des études de cas réelles et des exemples, permettant un apprentissage pratique dans le domaine de l'apprentissage profond.",
+  "viewBookLink": "Voir le livre",
+
+  "microservicesCourse": "Développement de microservices avec .NET (Microsoft)",
+  "microservicesDescription": "Je suis actuellement en train d'apprendre à développer et déployer des microservices avec .NET. Le cours couvre la conception, le développement et le déploiement de microservices avec des technologies et pratiques modernes, vous aidant à construire des applications évolutives, fiables et performantes.",
+  "viewCourseLink5": "Voir le cours",
+
+
+  "achievementsHeader": "Réalisations",
+  "achievementsDescription": "Voici quelques-unes de mes certifications et réalisations.",
+
+  "cybersecurityBadgeTitle": "Badge de cybersécurité - TryHackMe",
+  "cybersecurityBadgeDescription": "Mes progrès et réalisations dans les défis de cybersécurité.",
+
+  "microsoftCertificationTitle": "Certification Microsoft - Préparez-vous à développer des solutions AI sur Azure",
+  "microsoftCertificationDescription": "Certifié pour la conception et le développement de microservices avec .NET, couvrant les architectures d'applications cloud modernes.",
+  "viewCertificationLink": "Voir la certification",
+
+
+  "contactHeader": "Contactez-moi",
+  "contactDescription": "Envoyez-moi un message, je serai heureux de répondre à vos questions.",
+
+  "nameLabel": "Nom",
+  "emailLabel": "Email",
+  "messageLabel": "Message",
+  "sendMessageButton": "Envoyer le message",
+
+  "messageSuccess": "Votre message a été envoyé avec succès !",
+  "messageError": "Il y a eu une erreur, veuillez réessayer plus tard.",
+
+  "footerText": "© {year} Syphax LAKHDARCHAOUCHE Tous droits réservés."
+
+
+}
